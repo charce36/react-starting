@@ -7,6 +7,3 @@ class Menu extends React.Component {
     );
   }
 }
-
-//ul es padre de li
-//menu es dueño de ul y li
