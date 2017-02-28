@@ -5,8 +5,6 @@
 //no como funciones (conocidos como stateless)
 
 //setState, una cola que react decide cuando cambiar el estado
-// para cambiar el state
-
 class Toggle extends React.Component {
   constructor(props) {
     super(); //constructor de la case que hereda
@@ -26,3 +24,16 @@ class Toggle extends React.Component {
     );
   }
 }
+
+
+//segundo parametro de setState
+// se ejecuta cuando se setea el nuevo estado
+this.setState(nuevoEstado, function() {
+  // Aqui this.state ya esta actualizado
+});
+// Aqui this.state no necesariamente esta
+// actualizado
+
+// cada vez que se actualiza state, se renderea el arbol o subarbol
+
+// se aconseja solo usar props

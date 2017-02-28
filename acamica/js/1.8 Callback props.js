@@ -28,9 +28,7 @@ class BotonGuardar extends React.Component {
   }
 }
 
-// renderizar elementos
-// si no tiene elemntos "delega" al componente superior que hacer invocando a una funcion
-
+// renderizar algo 
 class Lista extends React.Component {
   render() {
     var elementos = this.props.elementos.map(function(elemento) {
@@ -45,45 +43,3 @@ class Lista extends React.Component {
     );
   }
 }
-
-
-var app = React.createElement(Lista, {
-  elementos: [],
-  renderSinResultados: function () {
-    return React.createElement(
-      'p', 
-      null, 
-      'No hay resultados'
-    );
-  }
-});
-
-
-//Desafio 1
-class Foo extends React.Component {
-  render() {
-    return React.createElement('input', {
-      type: 'button',
-      value: 'Clickeame',
-      onClick: function(ev){console.log('Click!');}
-    });
-  }
-}
-
-//Desafio 2
-class PopOver extends React.Component {
-  render() {
-    let element = null;
-    if(this.props.isOpen)
-      element = this.props.renderContent();
-
-	return React.createElement('div', { className: 'popOver' }, element );
-  }
-}
-
-var app = React.createElement(PopOver, {
-  isOpen: true,
-  renderContent: function() {
-    return React.createElement('div', null, 'Hola soy el contenido del popover!');
-  }
-});

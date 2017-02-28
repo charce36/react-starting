@@ -27,16 +27,29 @@ class Notificacion extends React.Component{
 //cuando se llama a la funcion render
 
 // no se tiene que modificar las props nunca
-// react calcula en base a estas props
+// react calcula en base a estas props y asume esto
 
 class Boton extends React.Component {
   render() {
     if (!this.props.color) {
-      this.props.color = 'blue'; // <-- NO
+      this.props.color = 'blue'; // <-- NO !!!!!!!
     }
     
     return React.createElement('button', {
       style: { color: this.props.color } 
+    }, this.props.texto);
+  }
+}
+
+//SI 
+class Boton extends React.Component {
+  render() {
+    var color = this.props.color;
+    
+    if (!color) { color = 'blue'; }
+    
+    return React.createElement('button', {
+      style: { color: color }
     }, this.props.texto);
   }
 }
